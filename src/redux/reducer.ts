@@ -15,7 +15,7 @@ const initialState = {
   
 };
 
-function ordenar(array: Array<any>, order:string) {
+/*function ordenar(array: Array<any>, order:string) {
  let roomsOrder = array;
  let newRoomsOrder = [];
  if (order === "Precio Menor") {
@@ -43,7 +43,7 @@ function ordenar(array: Array<any>, order:string) {
  }
  //
  return newRoomsOrder;
-}
+}*/
 
 export default function rootReducer(state = initialState, action:any) {
  switch (action.type) {
