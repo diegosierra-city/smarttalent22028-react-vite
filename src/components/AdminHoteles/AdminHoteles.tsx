@@ -8,16 +8,16 @@ function AdminHoteles() {
   // se crea una variable de estado local del listado
   const [hotels, setHotels] = useState<Hotel[]>([]);
 //edit hotel
-const [editHotel, setEditHotel] = useState<Hotel>({
+/*const [editHotel, setEditHotel] = useState<Hotel>({
  id:0,
  hotel: '',
  country: '',
  city: '',
  address: '',
  taxes: 0
-})
+})*/
 
-const [editHotelId, setEditHotelId] = useState<number>(0)
+//const [editHotelId, setEditHotelId] = useState<number>(0)
 
 
 
