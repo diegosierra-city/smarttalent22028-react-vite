@@ -1,27 +1,28 @@
-import { useState } from 'react'
+//import { useState } from 'react'
 import './App.css'
+import Admin from "./views/Admin/Admin.js";
+import Error404 from "./views/Error404/Error404";
+import Home from "./views/Home/Home";
+import {Routes, Route} from 'react-router-dom';
 
 function App() {
-  const [count, setCount] = useState(0)
+  //const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-       Buscador Hotelero ++
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="App">
+       
+<Routes>
+<Route path="/" element={<Home />} />
+{/* <Route path="/search" element={<Search />} /> 
+<Route path="/detail/:id" element={<Detail />} />
+*/}
+
+<Route path="/admin" element={<Admin />} />
+<Route path="*" element={<Error404 />} />
+</Routes>
+{/* {pathname!='/' && <Footer />} */}
+    
+    </div>
   )
 }
 
