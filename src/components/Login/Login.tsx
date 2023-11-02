@@ -12,7 +12,7 @@ import { useStore } from "../../store/allStore";
 
 
 export default function Login() {
-  const {login, loginChange} = useStore()
+  const {loginChange} = useStore()
   
   let [typeForm, setTypeForm] = useState('login')
 
@@ -102,7 +102,8 @@ if (inputs.password.length < 6) {
   
   //console.log('dietsInputs',inputs.diets)
   return (
-    <div className="bg-color4 p-6 rounded-md border border-secondary shadow-lg">
+    <div className="flex h-[100vh] align-middle items-center text-primary">
+    <div className="bg-color4 p-6 rounded-md border border-secondary shadow-lg w-10/12 md:w-6/12 lg:w-4/12 mx-auto ">
       <h2>User</h2>
       <form onSubmit={handleSubmit}>
        {typeForm==='signup' && (
@@ -178,6 +179,7 @@ if (inputs.password.length < 6) {
         )}
         
       </form>
+    </div>
     </div>
   );
 }

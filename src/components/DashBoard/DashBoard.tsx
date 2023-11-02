@@ -4,17 +4,16 @@ import {deleteCookie} from '../../utilities/cookie'
 import { useState } from 'react'
 import AdminHoteles from '../AdminHoteles/AdminHoteles'
 import AdminReservas from '../AdminReservas/AdminReservas'
-
+import { useStore } from '../../store/allStore'
 
 function DashBoard() {
-//const dispatch = useDispatch()
-// con useState creamos la variable section
+  const {loginChange} = useStore()
   const [section, setSection] = useState('Hoteles')
 
 
 function handlerClose(){
 deleteCookie('user')
-//dispatch(logoutUser())
+loginChange(false)
 }  
   return (
     <>

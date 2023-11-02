@@ -27,7 +27,7 @@ const {login, loginChange} = useStore()
  }, [getCookie('user')]);
 
   return (
-    <div>{login}
+    <div className='w-full md:w-11/12 mx-auto'>
      {login? <DashBoard /> : <Login />}
      </div>
   )
