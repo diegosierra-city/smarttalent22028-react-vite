@@ -8,12 +8,11 @@ import {saveCookie} from '../../utilities/cookie'
 //getCookie,deleteCookie,
 const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/;
 import type { User } from "../../types/User";
-import { useDispatch } from 'react-redux'
-import { loginUser} from '../../redux/actions'
+import { useStore } from "../../store/allStore";
 
 
 export default function Login() {
-  const dispatch = useDispatch();
+  const {login, loginChange} = useStore()
   
   let [typeForm, setTypeForm] = useState('login')
 
@@ -79,7 +78,7 @@ if (inputs.password.length < 6) {
      let response = await  axios.post(`https://backend-smart-talent-22028.onrender.com/${typeForm}`,inputs)
       let data = response.data
       //console.log(`${typeForm}`,data)
-      dispatch(loginUser())
+      loginChange(true)
       saveCookie('user', JSON.stringify(data), 8)//8horas
       alert(`Bienvenido ${data.name}`);
       setErrors({
@@ -103,7 +102,7 @@ if (inputs.password.length < 6) {
   
   //console.log('dietsInputs',inputs.diets)
   return (
-    <div>
+    <div className="bg-color4 p-6 rounded-md border border-secondary shadow-lg">
       <h2>User</h2>
       <form onSubmit={handleSubmit}>
        {typeForm==='signup' && (

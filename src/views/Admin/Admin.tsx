@@ -2,27 +2,32 @@ import {getCookie} from '../../utilities/cookie'
 import Login from '../../components/Login/Login'
 import DashBoard from '../../components/DashBoard/DashBoard'
 import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
-import { loginUser, logoutUser} from '../../redux/actions'
+import { useStore } from '../../store/allStore';
+//import { shallow } from 'zustand/shallow';
+
 
 function Admin() {
+//let login=useStore((state) => state.login)
+/*const state = useStore((state) => ({
+  state.login
+state.loginChange
+}),shallow)*/
+const {login, loginChange} = useStore()
 
-const login = useSelector((state:any)=>state.login);
-const dispatch = useDispatch();
 
   useEffect(() => {
    // Verifica si la cookie "user" existe
    if (getCookie('user')) {
      //console.log('La cookie "user" existe.');
-     dispatch(loginUser())
+     loginChange(true)
    } else {
      //console.log('La cookie "user" no existe.');
-     dispatch(logoutUser())
+     loginChange(false)
    }
  }, [getCookie('user')]);
 
   return (
-    <div>
+    <div>{login}
      {login? <DashBoard /> : <Login />}
      </div>
   )

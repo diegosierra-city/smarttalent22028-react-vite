@@ -1,20 +1,20 @@
 import {deleteCookie} from '../../utilities/cookie'
-import { useDispatch } from 'react-redux'
-import { logoutUser } from '../../redux/actions'
+//import { useDispatch } from 'react-redux'
+//import { logoutUser } from '../../redux/actions'
 import { useState } from 'react'
 import AdminHoteles from '../AdminHoteles/AdminHoteles'
 import AdminReservas from '../AdminReservas/AdminReservas'
 
 
 function DashBoard() {
-const dispatch = useDispatch()
+//const dispatch = useDispatch()
 // con useState creamos la variable section
   const [section, setSection] = useState('Hoteles')
 
 
 function handlerClose(){
 deleteCookie('user')
-dispatch(logoutUser())
+//dispatch(logoutUser())
 }  
   return (
     <>
