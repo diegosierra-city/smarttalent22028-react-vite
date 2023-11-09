@@ -1,15 +1,13 @@
 import { useState } from "react";
-//import { useDispatch } from "react-redux";
-//useSelector
-//import { loginUser } from "../../redux/actions";
-//import styles from "./Login.module.css";
 import axios from "axios";
 import {saveCookie} from '../../utilities/cookie'
 //getCookie,deleteCookie,
 const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/;
 import type { User } from "../../types/User";
 import { useStore } from "../../store/allStore";
-
+//import  jwt  from 'jsonwebtoken'
+//import jwtDecode from 'jwt-decode';
+//import {jwtDecode} from 'jwt-decode';
 
 export default function Login() {
   const {loginChange} = useStore()
@@ -21,20 +19,20 @@ export default function Login() {
     let err:any ={};
 
     if (!inputs.email || inputs.email.length < 6) {
-     err.email = "the email is missing";
+     err.email = "Falta el email";
    } else if (regexEmail.test(inputs.email) === false) {
-     err.email = "Must be an e-mail";
+     err.email = "Error en el Email";
    }
 if (inputs.password.length < 6) {
-      err.password = "the password is missing, 6 or more characters";
+      err.password = "La clave debe tener mínimo 6 caracteres";
     }
 
     if(typeForm==='signup'){
      if (inputs.password.length >= 6 && inputs.password!==inputs.password2) {
-      err.password2 = "Confirmation is not the same";
+      err.password2 = "La confirmación no es igual";
     }
     if (inputs.name === "") {
-      err.name = "the name is missing";
+      err.name = "Falta el nombre";
     }
     }
     
@@ -75,12 +73,19 @@ if (inputs.password.length < 6) {
     //alert("Datos completos");
 
     try {
+      //console.log('a')
      let response = await  axios.post(`https://backend-smart-talent-22028.onrender.com/${typeForm}`,inputs)
       let data = response.data
-      //console.log(`${typeForm}`,data)
-      loginChange(true)
       saveCookie('user', JSON.stringify(data), 8)//8horas
+      loginChange(true)      
       alert(`Bienvenido ${data.name}`);
+      /*
+      const token:any = jwt.verify(data,'9Uy-po+)yh6');
+      console.log(`${typeForm}`,data)
+      loginChange(true)
+      
+      alert(`Bienvenido ${token.name}`);
+      */
       setErrors({
        name: "",
        email: "",
@@ -94,8 +99,8 @@ if (inputs.password.length < 6) {
        password2: "",
       });
     } catch (error:any) {
-   //console.table(error)
-    alert(error.response.data);
+   //console.log('error',error)
+   alert(error.response.data);
     }
   };
 

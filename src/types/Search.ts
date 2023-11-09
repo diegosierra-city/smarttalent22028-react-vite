@@ -1,5 +1,6 @@
 export interface Search {
- dateIn: string
- dateOut: string
+ dateIn: Date | any
+ dateOut: Date | any
  pax: number
+ city: string
 }

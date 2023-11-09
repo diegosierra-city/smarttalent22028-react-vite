@@ -13,7 +13,9 @@ export default {
       color4: '#F6F1EE',
       black: '#000000',
       white: '#ffffff',
-      silver: '#cccccc'
+      silver: '#cccccc',
+      green: '#008000',
+      red: '#FF0000',
           },
   },
   plugins: [],

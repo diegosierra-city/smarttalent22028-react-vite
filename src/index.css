@@ -24,10 +24,11 @@ body {
 }
 
 h1,h2,h3 {
-  @apply font-bold text-primary
+  @apply font-bold 
 }
 h1{font-size:larger}
 h2{font-size:large}
+h3{font-size:medium}
 
 button {
   transition: border-color 0.25s;
@@ -38,11 +39,23 @@ a{
  @apply font-bold border-b border-b-secondary/0 hover:border-b-secondary
 }
 
-input{
-  @apply border border-secondary rounded-md px-2
+input, textarea{
+  @apply border border-secondary rounded-md px-2 m-1 text-primary
 }
 
-
+.tabla{
+  @apply w-full
+}
+.tabla td{
+  @apply p-1
+}
+/*color de background para las filas impares*/
+.tabla thead tr{
+  @apply bg-black
+}
+.tabla tbody tr:nth-child(odd){ /*odd - even  */
+  @apply bg-black/20
+}
 
 .menu li{
   @apply mx-4 cursor-pointer hover:text-secondary 
@@ -51,3 +64,14 @@ input{
 .menu .active{
   @apply font-bold
 }
+.label{
+  @apply text-color3 text-sm
+}
+
+.image-slider{
+  @apply w-full h-[40vw] overflow-hidden
+}
+.image-slider img{
+  @apply w-full
+}
+
