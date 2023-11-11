@@ -8,11 +8,12 @@ import SearchBox from "../../components/SearchBox/SearchBox";
 import { FiMapPin } from "react-icons/fi";
 import { diasEntreFechas } from "../../utilities/DaysDates";
 import type { Booking, BookingPax } from "../../types/Booking";
+import type { Search } from "../../types/Search";
 
 
 
 function Search() {
-let searchBase = getLocalStorage('search')
+let searchBase:Search = getLocalStorage('search') as Search
   const {listSearchHoteles,listSearchRooms,searchRooms,newBookingWeb} = useStore()
   const [showBooking,setShowBooking] = useState<boolean>(false)
 
