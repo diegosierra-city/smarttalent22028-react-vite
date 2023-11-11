@@ -3,7 +3,7 @@ import SearchBox from "../../components/SearchBox/SearchBox"
 
 function Home() {
   return (
-    <div className="relative border border-red">
+    <div className="relative">
 
 <Slider 
   images={[

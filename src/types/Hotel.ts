@@ -6,3 +6,7 @@ export interface Hotel {
  address: string
  taxes: number
 }
+
+export interface City {
+ city: string;
+}

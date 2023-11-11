@@ -39,7 +39,7 @@ a{
  @apply font-bold border-b border-b-secondary/0 hover:border-b-secondary
 }
 
-input, textarea{
+input, select, textarea{
   @apply border border-secondary rounded-md px-2 m-1 text-primary
 }
 
@@ -58,11 +58,11 @@ input, textarea{
 }
 
 .menu li{
-  @apply mx-4 cursor-pointer hover:text-secondary 
+  @apply px-4 cursor-pointer hover:text-secondary 
 }
 
 .menu .active{
-  @apply font-bold
+  @apply font-bold bg-black/20
 }
 .label{
   @apply text-color3 text-sm

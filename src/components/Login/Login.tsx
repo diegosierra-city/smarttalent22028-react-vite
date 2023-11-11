@@ -174,7 +174,7 @@ if (inputs.password.length < 6) {
         <br />
         {typeForm==='login'? (
          <div>
-          <button type="submit" className="boton-principal">Login</button> <a href="#" onClick={()=>setTypeForm('signup')}>Sign up?</a>
+          <button type="submit" className="boton-principal">Login</button> <a href="#" className="hidden" onClick={()=>setTypeForm('signup')}>Sign up?</a>
          </div>
          
         ) : (
