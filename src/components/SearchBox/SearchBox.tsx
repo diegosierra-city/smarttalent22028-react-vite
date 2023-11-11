@@ -57,7 +57,16 @@ setErrors(err)
 setTotalErrores(totalError);
 };
 
-  let search: Search = { dateIn: searchBox.dateIn, dateOut: searchBox.dateOut, pax: searchBox.pax, city: searchBox.city };
+let search: Search =
+{ dateIn: '', dateOut: '', pax: 1, city: '' }
+
+useEffect(()=>{
+if(searchBox){
+ search = { dateIn: searchBox.dateIn, dateOut: searchBox.dateOut, pax: searchBox.pax, city: searchBox.city }; 
+}
+},[])
+
+  
 
   const [inputs, setInputs] = useState<Search>(search);
   //console.log('IN',inputs)
