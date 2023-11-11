@@ -132,7 +132,7 @@ return actualHotel?.city
   }
 
   
-  function formatDate(fechaSQL: Date) {
+  function formatDate(fechaSQL: any) {
     const fecha = new Date(fechaSQL);
   const year = fecha.getUTCFullYear();
   const month = (fecha.getUTCMonth() + 1).toString().padStart(2, '0');

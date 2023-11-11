@@ -1,8 +1,8 @@
 export interface Booking {
   id: number
   pax: number
-  dateIn: Date | any
-  dateOut: Date | any
+  dateIn: any
+  dateOut: any
   price: number
   emergency_name: string
   emergency_phone: string
@@ -14,7 +14,7 @@ export interface BookingPax {
   id: number
   name: string
   last_name: string
-  birthday: Date | any
+  birthday: any
   genere: string
   document_type: string
   document_number: string
