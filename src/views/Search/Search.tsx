@@ -130,7 +130,7 @@ setShowBooking(true)
         <h2 className="text-secondary">{hotel.hotel}</h2>
         <div className="text-sm flex"><FiMapPin /> {hotel.address}</div>
         
-        {listSearchRooms.length > 0 && 
+        {listSearchRooms.length > 0 && searchBase && 
                         listSearchRooms.filter((room:any) => room.hotelId === hotel.id).map((room:any) => (
                           <div key={room.id} className="flex mb-8">
                             <div className="w-full md:w-[30%] max-w-[300px]">
@@ -169,7 +169,7 @@ setShowBooking(true)
 
       </div>
 
-      {showBooking && (<div className='fixed z-1 top-0 bottom-0 left-0 right-0 bg-black/70  overflow-y-auto'>
+      {showBooking && actualBooking && (<div className='fixed z-1 top-0 bottom-0 left-0 right-0 bg-black/70  overflow-y-auto'>
 <div className='w-10/12 md:w-6/12 mx-auto lx:w-4/12 bg-white text-black rounded-md p-4 mt-10 mb-10 relative'>
 <form onSubmit={handlerSubmitBooking}>
   <h2 className='text-primary'>Reservar</h2>

@@ -186,7 +186,7 @@ return actualHotel?.city
       
       
 
-{showeditBooking && (<div className='fixed z-1 top-0 bottom-0 left-0 right-0 bg-black/70  overflow-y-auto'>
+{showeditBooking && actualBooking && (<div className='fixed z-1 top-0 bottom-0 left-0 right-0 bg-black/70  overflow-y-auto'>
 <div className='w-10/12 md:w-6/12 mx-auto lx:w-4/12 bg-white text-black rounded-md p-4 mt-10 mb-10 relative'>
 <form onSubmit={handlerSubmitBooking}>
   <h2 className='text-primary'>Reservar</h2>
